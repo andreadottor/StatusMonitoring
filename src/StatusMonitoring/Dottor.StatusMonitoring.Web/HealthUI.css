@@ -1,0 +1,32 @@
+﻿:root {
+    --primaryColor: #5ec297;
+    --secondaryColor: #349b72;
+    --darkColor: #000000;
+    --midDarkColor: #2f313a;
+    --grayColor: #444444;
+    --midGrayColor: #ebebeb;
+    --lightColor: #f6f6f7;
+    --dangerColor: #d26b4e;
+    --warningColor: #ff8f30;
+    --successColor: #3aaa97;
+    --logoImageUrl: url('/images/Artboard.png');
+    --bgAside: var(--primaryColor);
+}
+
+
+.hc-aside__logo {
+    border-radius: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50px;
+}
+
+.hc-aside.is-open .hc-aside__logo {
+    height: 50px;
+    width: 100%;
+}
+
+.hc-aside-menu__item:hover {
+    background-color: var(--grayColor);
+}
