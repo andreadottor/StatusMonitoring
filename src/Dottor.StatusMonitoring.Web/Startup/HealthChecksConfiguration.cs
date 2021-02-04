@@ -30,6 +30,8 @@
                 setup.SetEvaluationTimeInSeconds(30);
                 setup.SetMinimumSecondsBetweenFailureNotifications(60);
             }).AddSqlServerStorage(connectionString);
+
+            
         }
 
         public static IEndpointConventionBuilder MapConfiguredHealthChecksUI(this IEndpointRouteBuilder builder)

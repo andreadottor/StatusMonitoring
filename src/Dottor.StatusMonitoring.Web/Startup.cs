@@ -69,7 +69,7 @@ namespace Dottor.StatusMonitoring.Web
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages().RequireAuthorization();
-                endpoints.MapConfiguredHealthChecksUI();
+                endpoints.MapConfiguredHealthChecksUI().RequireAuthorization();
             });
         }
     }
