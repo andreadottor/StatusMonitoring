@@ -1,0 +1,48 @@
+﻿@page
+@model Dottor.StatusMonitoring.Web.Pages.StatusModel
+@using Microsoft.Extensions.Diagnostics.HealthChecks
+
+@{
+}
+
+<div class="card uw-login-pnl-wm">
+    <div class="card-header">
+        <h3 class="card-title">
+            System Status
+        </h3>
+    </div>
+
+    <div class="card-body">
+
+        <ul class="list-group list-group-flush">
+            @foreach (var item in Model.Report.Entries)
+            {
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        @item.Key
+
+                        @if (item.Value.Status == HealthStatus.Healthy)
+                        {
+                            <span class="badge badge-pill badge-success">Healthy</span>
+                        }
+                        else if (item.Value.Status == HealthStatus.Degraded)
+                        {
+                            <span class="badge badge-pill badge-warning">Degraded</span>
+                        }
+                        else if (item.Value.Status == HealthStatus.Unhealthy)
+                        {
+                            <span class="badge badge-pill badge-danger">Unhealthy</span>
+                        }
+                    </div>
+                    @if (!string.IsNullOrWhiteSpace(item.Value.Description))
+                    {
+                        <div class="alert alert-danger mt-3" role="alert">
+                            @item.Value.Description
+                        </div>
+                    }
+                </li>
+            }
+
+        </ul>
+    </div>
+</div>

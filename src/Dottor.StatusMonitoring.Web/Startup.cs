@@ -1,5 +1,6 @@
 namespace Dottor.StatusMonitoring.Web
 {
+    using Dottor.StatusMonitoring.Web.Configuration;
     using Dottor.StatusMonitoring.Web.Data;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -69,8 +70,10 @@ namespace Dottor.StatusMonitoring.Web
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages().RequireAuthorization();
-                endpoints.MapConfiguredHealthChecksUI().RequireAuthorization();
+                endpoints.MapConfiguredHealthChecksUI();
             });
+
+
         }
     }
 }
